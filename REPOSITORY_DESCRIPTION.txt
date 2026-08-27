@@ -1,1 +1,1 @@
-Desktop Python utility that builds safe PyInstaller commands, validates paths and options, streams build logs and supports cancellation without shell interpolation.
+A safer Python/PyInstaller command builder with input validation and a desktop interface. The web demo executes the real command-building logic without packaging files.

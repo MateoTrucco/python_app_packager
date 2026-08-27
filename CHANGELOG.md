@@ -1,8 +1,8 @@
 # Changelog
 
-All notable changes to this project will be documented here.
+## v2.0.0 — separated repository + web demo
 
-## [0.1.0] - 2026-08-06
+- Preserved the cleaned project source.
+- Added repository metadata, CI and MIT license.
+- Added a GitHub Pages live demo.
 
-- Created a clean standalone repository structure.
-- Added documentation, licensing, ignore rules and automated checks where applicable.
