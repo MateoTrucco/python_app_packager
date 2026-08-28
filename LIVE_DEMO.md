@@ -1,7 +1,7 @@
-# Live demo
+# Live experience
 
-Open: **https://mateotrucco.github.io/python_app_packager/**
+**[Open Python App Packager](https://mateotrucco.github.io/python_app_packager/)**
 
-Demo type: **pyodide_sim**
+Runtime: **Repository Python command builder via Pyodide**
 
-The repository README explains whether the browser executes original project logic, the native web app, or a safe simulator for platform/backend-only behavior.
+The repository README covers local setup, tested behavior and the relationship between this browser experience and the full application.

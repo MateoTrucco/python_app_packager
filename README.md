@@ -20,21 +20,16 @@ python main.py
 
 ---
 
-## Live demo
+## Interactive preview
 
-**[Open the live demo](https://mateotrucco.github.io/python_app_packager/)**
+[![Python App Packager interface](screenshots/preview.png)](https://mateotrucco.github.io/python_app_packager/)
 
-The demo runs the repository’s Python validation/command-building logic in the browser with Pyodide 314.0.4. It intentionally does not execute PyInstaller or create an executable.
+**[Open the live experience](https://mateotrucco.github.io/python_app_packager/)** · [View the portfolio](https://mateotrucco.github.io/)
 
-## Repository setup
+## Engineering baseline
 
-This separated repository also includes:
-
-- MIT license
-- project-specific `.gitignore`
-- automated tests / CI
-- GitHub Pages deployment for the demo
-- `screenshots/` placeholder for portfolio images
-
-The source files from the cleaned portfolio base were preserved unless a web-demo integration file had to be added.
+- Business logic separated from presentation
+- Automated tests and GitHub Actions CI
+- Responsive, keyboard-friendly browser experience
+- MIT licensed and documented setup
 

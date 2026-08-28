@@ -4,15 +4,16 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta name="description" content="A safer Python/PyInstaller command builder with input validation and a desktop interface. The web demo executes the real command-building logic without packaging files.">
-  <title>Python App Packager — Live Demo</title>
+  <title>Python App Packager — Interactive Lab</title>
   <link rel="stylesheet" href="web_demo/demo.css">
+  <link rel="stylesheet" href="web_demo/shell.css">
   <script src="https://cdn.jsdelivr.net/pyodide/v314.0.4/full/pyodide.js"></script>
   
 </head>
 <body>
   <main class="shell">
     <header class="topbar">
-      <div class="brand">Mateo Trucco · Live Demo</div>
+      <div class="brand">Mateo Trucco · Project Lab</div>
       <nav class="links">
         <a class="btn" href="https://github.com/MateoTrucco/python_app_packager" target="_blank" rel="noreferrer">Source ↗</a>
         <a class="btn" href="https://mateotrucco.github.io/">Portfolio</a>
@@ -25,14 +26,15 @@
         <p class="muted">A safer Python/PyInstaller command builder with input validation and a desktop interface. The web demo executes the real command-building logic without packaging files.</p>
       </div>
       <aside class="card">
-        <span class="badge">DEMO</span>
-        <h2 style="margin-top:12px">Try it here</h2>
-        <p class="muted">This page is intentionally scoped as a portfolio demo. See the repository README for the full desktop/backend scope and limitations.</p>
+        <span class="badge">INTERACTIVE LAB</span>
+        <h2 style="margin-top:12px">Explore the workflow</h2>
+        <p class="muted">Use the interactive workspace below to exercise the project's core logic. Source, tests and setup instructions are available in the repository.</p>
       </aside>
     </section>
-    <section class="grid"><div class="card"><div class="field"><label for="appName">Application name</label><input id="appName" value="my_tool"></div><div class="field"><label><input type="checkbox" id="oneFile" checked> One-file build</label></div><div class="field"><label><input type="checkbox" id="windowed" checked> Windowed app</label></div><div class="field"><label><input type="checkbox" id="clean" checked> Clean build</label></div><div class="actions"><button class="primary" id="build">Build command</button></div><p class="status" data-runtime-status>Preparing Python runtime…</p></div><div class="card"><h2>PyInstaller command preview</h2><div class="output" id="output"></div><p class="notice">DEMO: no executable is created in the browser. The real desktop app can run PyInstaller locally.</p></div></section>
-    <footer class="footer">Demo site for <code>python_app_packager</code>. Source and tests live in the repository.</footer>
+    <section class="grid"><div class="card"><h2>Build profile</h2><div class="field"><label for="appName">Application name</label><input id="appName" value="my_tool" maxlength="80" pattern="[A-Za-z0-9_.-]+"></div><div class="field"><label><input type="checkbox" id="oneFile" checked> One-file build</label></div><div class="field"><label><input type="checkbox" id="windowed" checked> Windowed app</label></div><div class="field"><label><input type="checkbox" id="clean" checked> Clean intermediate files</label></div><div class="actions"><button class="primary" id="build">Validate command</button><button id="consolePreset">Console preset</button></div><p class="status" data-runtime-status>Preparing Python runtime…</p></div><div class="card"><h2>PyInstaller command preview</h2><div class="metric-grid" id="buildMetrics"></div><div class="output" id="output"></div><p class="notice">The web lab validates and builds the exact argument list, but it never uploads files or creates an executable. Packaging remains a local desktop operation.</p></div></section>
+    <footer class="footer">Interactive browser build for <code>python_app_packager</code> · source and tests live in the repository.</footer>
   </main>
+  <script type="module" src="web_demo/shell.js"></script>
   <script type="module" src="web_demo/demo.js"></script>
 </body>
 </html>
