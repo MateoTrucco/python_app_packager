@@ -21,14 +21,14 @@
     </header>
     <section class="hero">
       <div class="card">
-        <p class="eyebrow">Featured · Python · Developer tool</p>
+        <p class="eyebrow" data-en="Featured · Python · Developer tool" data-es="Destacado · Python · Herramienta de desarrollo">Featured · Python · Developer tool</p>
         <h1>Python App Packager</h1>
-        <p class="muted">A safer Python/PyInstaller command builder with input validation and a desktop interface. The web demo executes the real command-building logic without packaging files.</p>
+        <p class="muted" data-en="A safer Python/PyInstaller command builder with input validation and a desktop interface. The web demo executes the real command-building logic without packaging files." data-es="Un constructor seguro de comandos Python/PyInstaller con validación e interfaz de escritorio. La demo ejecuta la lógica real sin empaquetar archivos.">A safer Python/PyInstaller command builder with input validation and a desktop interface. The web demo executes the real command-building logic without packaging files.</p>
       </div>
       <aside class="card">
         <span class="badge">INTERACTIVE LAB</span>
         <h2 style="margin-top:12px">Explore the workflow</h2>
-        <p class="muted">Use the interactive workspace below to exercise the project's core logic. Source, tests and setup instructions are available in the repository.</p>
+        <p class="muted" data-en="Validate the real argument builder safely in the browser; executable creation remains a local operation." data-es="Validá el constructor real de argumentos en el navegador; crear el ejecutable sigue siendo una operación local.">Validate the real argument builder safely in the browser; executable creation remains a local operation.</p>
       </aside>
     </section>
     <section class="grid"><div class="card"><h2>Build profile</h2><div class="field"><label for="appName">Application name</label><input id="appName" value="my_tool" maxlength="80" pattern="[A-Za-z0-9_.-]+"></div><div class="field"><label><input type="checkbox" id="oneFile" checked> One-file build</label></div><div class="field"><label><input type="checkbox" id="windowed" checked> Windowed app</label></div><div class="field"><label><input type="checkbox" id="clean" checked> Clean intermediate files</label></div><div class="actions"><button class="primary" id="build">Validate command</button><button id="consolePreset">Console preset</button></div><p class="status" data-runtime-status>Preparing Python runtime…</p></div><div class="card"><h2>PyInstaller command preview</h2><div class="metric-grid" id="buildMetrics"></div><div class="output" id="output"></div><p class="notice">The web lab validates and builds the exact argument list, but it never uploads files or creates an executable. Packaging remains a local desktop operation.</p></div></section>

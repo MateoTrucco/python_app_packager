@@ -10,6 +10,7 @@ from pathlib import Path
 from tkinter import filedialog, messagebox, ttk
 
 from builder import BuildOptions, build_command, pyinstaller_available
+from ui_theme import apply_theme, text_style
 
 
 class PackagerApp:
@@ -18,6 +19,7 @@ class PackagerApp:
         self.root.title("Python App Packager")
         self.root.geometry("820x600")
         self.root.minsize(700, 520)
+        self.colors = apply_theme(root, "#b77900")
         self.process: subprocess.Popen[str] | None = None
         self.build_in_progress = False
         self.cancel_requested = threading.Event()
@@ -40,7 +42,7 @@ class PackagerApp:
         container.columnconfigure(1, weight=1)
         container.rowconfigure(7, weight=1)
 
-        ttk.Label(container, text="Python App Packager", font=("Segoe UI", 22, "bold")).grid(
+        ttk.Label(container, text="Python App Packager", style="Title.TLabel").grid(
             row=0, column=0, columnspan=3, sticky="w", pady=(0, 4)
         )
         self.note = ttk.Label(container, wraplength=760)
@@ -66,13 +68,14 @@ class PackagerApp:
         log_frame.rowconfigure(0, weight=1)
         self.log = tk.Text(log_frame, wrap="word", state="disabled", font=("Consolas", 10))
         self.log.grid(row=0, column=0, sticky="nsew")
+        text_style(self.log, self.colors, readonly=True)
         scrollbar = ttk.Scrollbar(log_frame, orient="vertical", command=self.log.yview)
         scrollbar.grid(row=0, column=1, sticky="ns")
         self.log.configure(yscrollcommand=scrollbar.set)
 
         actions = ttk.Frame(container)
         actions.grid(row=8, column=0, columnspan=3, sticky="ew")
-        self.build_button = ttk.Button(actions, text="Build application", command=self.start_build)
+        self.build_button = ttk.Button(actions, text="Build application", style="Accent.TButton", command=self.start_build)
         self.build_button.pack(side="left")
         self.cancel_button = ttk.Button(actions, text="Cancel", command=self.cancel_build, state="disabled")
         self.cancel_button.pack(side="left", padx=8)
